@@ -1,0 +1,5 @@
+.azure
+.idea
+*.iml
+target/
+/src/main/resources/solar-panel-checker.properties
