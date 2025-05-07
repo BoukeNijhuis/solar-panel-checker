@@ -63,7 +63,7 @@
                     <!-- function app resource group -->
                     <resourceGroup>rg-boukenijhuis-development</resourceGroup>
                     <!-- function app service plan name -->
-                    <appServicePlanName>java-functions-app-service-plan</appServicePlanName>
+                    <appServicePlanName>solar-panel-checker-service-plan</appServicePlanName>
                     <!-- function app region-->
                     <!-- refers https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details#supported-regions for all valid values -->
                     <region>westus</region>
@@ -73,7 +73,7 @@
 
                     <!-- Whether to disable application insights, default is false -->
                     <!-- refers https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details for all valid configurations for application insights-->
-                    <!-- <disableAppInsights></disableAppInsights> -->
+                     <disableAppInsights></disableAppInsights>
                     <runtime>
                         <!-- runtime os, could be windows, linux or docker-->
                         <os>windows</os>
