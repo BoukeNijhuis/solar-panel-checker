@@ -3,5 +3,6 @@ applications:
   - name: SOLAR-PANEL-CHECKER
     path: target/solar-panel-checker-1.0.0-SNAPSHOT-jar-with-dependencies.jar
     memory: 600MB
+    health-check-type: process
     buildpacks:
       - java_buildpack
