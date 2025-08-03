@@ -1,28 +1,17 @@
 package nl.boukenijhuis;
 
-import com.microsoft.azure.functions.ExecutionContext;
-import com.microsoft.azure.functions.annotation.FunctionName;
-import com.microsoft.azure.functions.annotation.TimerTrigger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Properties;
 
-/**
- * Azure Functions with Timer trigger.
- */
 public class TimerTriggerJava {
+
+    // schedule = "0 0 20 * * 0"
 
     // for testing
     public static void main(String[] args) throws IOException {
-        new TimerTriggerJava().run("", new TestExecutionContext() );
-    }
-
-    @FunctionName("TimerTriggerJava")
-    public void run(
-        @TimerTrigger(name = "timerInfo", schedule = "0 0 20 * * 0") String timerInfo,
-                    final ExecutionContext context) throws IOException {
 
         // read the properties
         Properties properties = new Properties();
