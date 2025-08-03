@@ -5,14 +5,20 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Properties;
+import java.util.TimerTask;
 
-public class TimerTriggerJava {
+class Checker extends TimerTask {
 
-    // schedule = "0 0 20 * * 0"
+    @Override
+    public void run() {
+        try {
+            checkSolarPanels();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-    // for testing
-    public static void main(String[] args) throws IOException {
-
+    private void checkSolarPanels() throws IOException {
         // read the properties
         Properties properties = new Properties();
         properties.load(Mailer.class.getResourceAsStream("/solar-panel-checker.properties"));
@@ -30,10 +36,11 @@ public class TimerTriggerJava {
         subject += date;
 
         Mailer.sendEmail(properties, subject);
+
     }
 
     @NotNull
-    private static LocalDate getDate(String response) {
+    private LocalDate getDate(String response) {
         // get output for this week
         System.out.println(response);
 
