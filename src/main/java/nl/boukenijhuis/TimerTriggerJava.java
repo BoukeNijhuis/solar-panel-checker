@@ -14,11 +14,6 @@ import java.util.Properties;
  */
 public class TimerTriggerJava {
 
-    // for testing
-    public static void main(String[] args) throws IOException {
-        new TimerTriggerJava().run("", new TestExecutionContext() );
-    }
-
     @FunctionName("TimerTriggerJava")
     public void run(
         @TimerTrigger(name = "timerInfo", schedule = "0 0 20 * * 0") String timerInfo,
@@ -59,5 +54,10 @@ public class TimerTriggerJava {
         LocalDate date = LocalDate.parse(endDate);
         System.out.println("endDate (as Date): " + date);
         return date;
+    }
+
+    // for testing
+    public static void main(String[] args) throws IOException {
+        new TimerTriggerJava().run("", new TestExecutionContext() );
     }
 }
