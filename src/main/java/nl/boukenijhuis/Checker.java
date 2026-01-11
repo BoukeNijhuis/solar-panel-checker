@@ -1,7 +1,5 @@
 package nl.boukenijhuis;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Properties;
@@ -13,12 +11,12 @@ class Checker extends TimerTask {
     public void run() {
         try {
             checkSolarPanels();
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void checkSolarPanels() throws IOException {
+    private void checkSolarPanels() throws IOException, InterruptedException {
         // read the properties
         Properties properties = new Properties();
         properties.load(Mailer.class.getResourceAsStream("/solar-panel-checker.properties"));
@@ -39,7 +37,6 @@ class Checker extends TimerTask {
 
     }
 
-    @NotNull
     private LocalDate getDate(String response) {
         // get output for this week
         System.out.println(response);

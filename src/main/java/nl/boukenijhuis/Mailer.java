@@ -1,7 +1,5 @@
 package nl.boukenijhuis;
 
-import org.jetbrains.annotations.NotNull;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -39,7 +37,6 @@ public class Mailer {
         }
     }
 
-    @NotNull
     private static Properties getMailProperties() {
         Properties mailProperties = new Properties();
 
