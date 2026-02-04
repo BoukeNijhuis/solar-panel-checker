@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: SOLAR-PANEL-CHECKER
+  - name: solar-panel-checker
     path: target/solar-panel-checker-1.0.0-SNAPSHOT-jar-with-dependencies.jar
     memory: 800MB
     health-check-type: process
